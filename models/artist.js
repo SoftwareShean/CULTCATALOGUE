@@ -7,7 +7,6 @@ const Artist = new Schema(
     portraitImg: { type: String, required: true }, 
     artistBio: { type: String, required: true },
     galleryName: { type: String, required: true }, 
-    
   },
   {timestamps: true}
 )
