@@ -1,0 +1,15 @@
+.App {
+  margin: 0 auto;
+}
+
+.artistCollection {
+  margin: 0 auto;
+  margin-top: 50px;
+  height: fit-content;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
