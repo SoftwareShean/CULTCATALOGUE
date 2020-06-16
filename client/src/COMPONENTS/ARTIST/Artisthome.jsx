@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import '../ARTIST/Artisthome.css';
+import { Link } from 'react-router-dom'
 
 export default class Artisthome extends Component {
-  render() {
+  render(props) {
     return (
-      <div className="artistHome shaddow">
-        <img alt="artist portrait" src="https://gerryco23.files.wordpress.com/2014/11/grayson-perry.jpg?w=725&h=408"></img>
+    <>
+        {this.props.data.map((artist, index) =>
+        { return <Link to={`/artist/${index}`}>
+        < div className = "artistHome shaddow" >
+        <img alt="artist portrait" src={artist.portraitImg}></img>
         <div className="textOverlay">
-          <h4>Grayson Perry</h4>
+          <h4>{artist.name}</h4>
         </div>
-      </div>
+        </div >
+        </Link>
+        })
+    }
+    </>
     )
   }
 }
