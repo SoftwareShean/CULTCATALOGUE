@@ -44,7 +44,7 @@ const main = async () => {
             "source": "https://www.saatchigallery.com/artists/artpages/grayson_perry_golden_ghosts_13768.htm"
           }
         ]
-      },
+      }
     ]
     await Artist.insertMany(artists)
     console.log("Created artist!")
