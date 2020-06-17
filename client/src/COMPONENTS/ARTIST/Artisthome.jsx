@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import '../ARTIST/Artisthome.css';
-import { Link } from 'react-router-dom'
+import './Artisthome.css';
+import { Link, withRouter } from 'react-router-dom'
 
-export default class Artisthome extends Component {
+class Artisthome extends Component {
   render(props) {
+    let index = this.props.match.params.id;
     return (
     <>
-        {this.props.data.map((artist, index) =>
-        { return <Link to={`/artist/${index}`}>
+        {this.props.data.map((artist, _id) =>
+        {return <Link to={`/artist/${artist._id}`}>
         < div className = "artistHome shaddow" >
         <img alt="artist portrait" src={artist.portraitImg}></img>
         <div className="textOverlay">
@@ -21,3 +22,5 @@ export default class Artisthome extends Component {
     )
   }
 }
+
+export default withRouter(Artisthome);
