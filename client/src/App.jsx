@@ -24,7 +24,10 @@ export default class App extends Component{
   render() {
     return (
       <div className="App">
-        <Header />
+        <Route path="/">
+         <Header /> 
+        </Route>
+        
         <div className="artistCollection">
           <Route path="/" exact>
             <Artisthome data={this.state.artist} />

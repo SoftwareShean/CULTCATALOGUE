@@ -4,16 +4,20 @@ import './Artistprofile.css'
 
 class Artistprofile extends Component {
   render(props) {
-    let index = this.props.match.params.id;
+    let id = this.props.match.params.id;
     let artist;
+    console.log('Line 9 ' + artist)
+    if (id) {
+      artist = this.props.data.find(artist => artist._id === this.props.match.params.id)
+    }
     return (
     <>
-      {this.props.data[index] &&
+      {this.props.data &&
           <div className="profile" key={artist}>
-        <img alt="artist portrait" src={this.props.data.portraitImg}></img>
-        <h4>{this.props.data.name}</h4>
-        <p>{this.props.data.artistBio}</p>
-        <h3>Gallery: {this.props.data.gallery}</h3>
+        <h4>{artist.name}</h4>
+        {/* <h3>Gallery: {artist.gallery}</h3> */}
+        <img alt="artist portrait" src={artist.portraitImg}></img>
+        <p>{artist.artistBio}</p>
           </div>
       }
         </>

@@ -17,3 +17,7 @@ h1, h4 {
   margin: 0px;
   color: white;
 }
+
+a {
+  text-decoration: none;
+}

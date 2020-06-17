@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom'
 
 class Artisthome extends Component {
   render(props) {
-    let index = this.props.match.params.id;
     return (
     <>
         {this.props.data.map((artist, _id) =>
