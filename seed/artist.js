@@ -38,8 +38,8 @@ const main = async () => {
               {"image": "https://6d49d47bd32a151032ae-907965fc79c9900a93c12efeb23103bd.ssl.cf1.rackcdn.com/artworks/grayson-perry-barbarics.jpg"}
             ],
             "source": "https://www.saatchigallery.com/artists/artpages/grayson_perry_barbaric_splandour.htm"
-        }],
-          {
+        },
+        {
             "title": "Golden Ghosts",
             "description": "Unhappy expressions on the little girls’ faces in Golden Ghosts contrast sharply with the idyllic country cottages stenciled in the background. Perry often uses found images to create a mood or a tension – the exceptionally sad image of the seated girl is that of a child affected by the Chernobyl Nuclear Power Station disaster. This evocative work hints at a familiarity with psychotherapy, made at a time when Perry was coming to terms with his own unhappy past. Perry’s transvestite alter ego, Claire, appears outlined in gold as the ghost in the title, dressed in the elaborate embroidered Coming Out Dress, made for a performance in 2000.",
             "dimension": "Eathenware, 65cm x 39cm x 39cm",
