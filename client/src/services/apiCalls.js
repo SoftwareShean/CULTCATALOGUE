@@ -1,8 +1,8 @@
 import api from './apiConfig';
 
-export const getArtist = async () => {
+export const getArtists = async () => {
   try {
-    const response = await api.get('/posts')
+    const response = await api.get('/artists')
     return response.data
   }
   catch (error) {
@@ -10,7 +10,7 @@ export const getArtist = async () => {
   }
 }
 
-export const getPost = async id => {
+export const getArtist = async id => {
   try {
     const response = await api.get(`/posts/${id}`)
     return response.data
@@ -19,27 +19,27 @@ export const getPost = async id => {
   }
 }
 
-export const createPost = async post => {
+export const createArtist = async post => {
   try {
-    const response = await api.post('/posts', post)
+    const response = await api.post('/artists', post)
     return response.data
   } catch (error) {
     throw error
   }
 }
 
-export const updatePost = async (id, post) => {
+export const updateArtist = async (id, post) => {
   try {
-    const response = await api.put(`/posts/${id}`, post)
+    const response = await api.put(`/artists/${id}`, post)
     return response.data
   } catch (error) {
     throw error
   }
 } 
 
-export const deletePost = async id => {
+export const deleteArtist = async id => {
   try {
-    const response = await api.delete(`/posts/${id}`)
+    const response = await api.delete(`/artists/${id}`)
     return response.data
   } catch (error) {
     throw error

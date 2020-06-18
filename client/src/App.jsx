@@ -5,6 +5,7 @@ import './App.css';
 import Header from './COMPONENTS/HEADER/Header'
 import Artisthome from './COMPONENTS/ARTIST/Artisthome';
 import Artistprofile from './COMPONENTS/ARTIST/Artistprofile';
+import Createpage from './COMPONENTS/ObjUpdate/Createpage';
 
 export default class App extends Component{
   constructor() {
@@ -34,6 +35,9 @@ export default class App extends Component{
           </Route>
           <Route path="/artist/:id" exact>
             <Artistprofile data={this.state.artist} />
+          </Route>
+          <Route path="/create-artist" exact>
+            <Createpage />
           </Route>
         </div>
       </div>
