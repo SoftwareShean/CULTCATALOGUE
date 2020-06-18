@@ -29,7 +29,7 @@ let ArtistBio = new Schema(
 const Artist = new Schema(
   {
     name: { type: String, required: true },
-    portraitImg: [{type: string, required: true}],
+    portraitImg: [{type: String, required: true}],
     artistBio: [ArtistBio],
     galleryName: [Gallery],
     portfolio: [Portfolio]
