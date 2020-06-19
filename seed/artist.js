@@ -4,13 +4,13 @@ const Artist = require('../models/artist')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-
+await Artist.deleteMany()
   const artists =
     [
       {
         "name": "Grayson Perry",
         "portraitImg": [
-          {"image": "https://gerryco23.files.wordpress.com/2014/11/grayson-perry.jpg?w=725&h=408"}
+          "https://gerryco23.files.wordpress.com/2014/11/grayson-perry.jpg?w=725&h=408"
         ],
         "artistBio": [
           {
@@ -34,8 +34,8 @@ const main = async () => {
             "description": "Perry's forms and content are always incongruous: classic Greecian-like urns bearing friezes of car-wrecks, cell-phones, supermodels, as well as more dark and literary scenes, often incorporate auto-biographical references.",
             "dimension": "Glazed ceramic, 67cm x 35cm",
             "date": "2003",
-            "image": [
-              {"image": "https://6d49d47bd32a151032ae-907965fc79c9900a93c12efeb23103bd.ssl.cf1.rackcdn.com/artworks/grayson-perry-barbarics.jpg"}
+            "images": [
+              "https://6d49d47bd32a151032ae-907965fc79c9900a93c12efeb23103bd.ssl.cf1.rackcdn.com/artworks/grayson-perry-barbarics.jpg"
             ],
             "source": "https://www.saatchigallery.com/artists/artpages/grayson_perry_barbaric_splandour.htm"
         },
@@ -44,8 +44,8 @@ const main = async () => {
             "description": "Unhappy expressions on the little girls’ faces in Golden Ghosts contrast sharply with the idyllic country cottages stenciled in the background. Perry often uses found images to create a mood or a tension – the exceptionally sad image of the seated girl is that of a child affected by the Chernobyl Nuclear Power Station disaster. This evocative work hints at a familiarity with psychotherapy, made at a time when Perry was coming to terms with his own unhappy past. Perry’s transvestite alter ego, Claire, appears outlined in gold as the ghost in the title, dressed in the elaborate embroidered Coming Out Dress, made for a performance in 2000.",
             "dimension": "Eathenware, 65cm x 39cm x 39cm",
             "date": "2000",
-            "image": [
-              {"image": "https://6d49d47bd32a151032ae-907965fc79c9900a93c12efeb23103bd.ssl.cf1.rackcdn.com/artworks/1507649218_Perry,%20Grayson%20-%20Golden%20Ghosts%20(2).jpg"}
+            "images": [
+              "https://6d49d47bd32a151032ae-907965fc79c9900a93c12efeb23103bd.ssl.cf1.rackcdn.com/artworks/1507649218_Perry,%20Grayson%20-%20Golden%20Ghosts%20(2).jpg"
             ],
             "source": "https://www.saatchigallery.com/artists/artpages/grayson_perry_golden_ghosts_13768.htm"
           }
