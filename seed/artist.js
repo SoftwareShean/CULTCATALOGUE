@@ -8,7 +8,7 @@ await Artist.deleteMany()
   const artists =
     [
       {
-        "name": "Grayson Perry",
+      "name": [{"first": "Grayson", "last": "Perry"}],
         "portraitImg": [
           "https://gerryco23.files.wordpress.com/2014/11/grayson-perry.jpg?w=725&h=408"
         ],
