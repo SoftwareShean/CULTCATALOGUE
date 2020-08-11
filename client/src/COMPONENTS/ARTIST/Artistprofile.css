@@ -6,7 +6,7 @@
 
 .profile img {
   position: relative;
-  bottom: 10px;
+  /* bottom: 10px; */
   z-index: -2;
   object-fit: cover;
   height: auto;
@@ -17,14 +17,14 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  left: -100px;
+  /* left: -100px; */
   color: black;
 }
 
 .profile h4 {
   position: relative;
   z-index: -1;
-  left: -5px;
+  /* left: -5px; */
   bottom: 0px; 
   color: black;
   font-size: 40px;
@@ -46,4 +46,17 @@
   bottom: 125px;
   background-color: rgba(250, 248, 248, 0.6);
   text-align: justify;
+  color: black;
+}
+
+.portfolio img {
+  zoom: 5%;
+  position: relative;
+  bottom: 100px;
+}
+
+.portfolio p {
+  position: relative;
+  left: 20px;
+  width: 100%;
 }
