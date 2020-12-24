@@ -1,5 +1,6 @@
 const db = require('../db/connection')
 const Artist = require('../models/artist')
+const Message = require('../models/message')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -53,7 +54,7 @@ await Artist.deleteMany()
       }
     ]
     await Artist.insertMany(artists)
-    console.log("Created artist!")
+  console.log("Created artist!")
 }
 const run = async () => {
     await main()
