@@ -5,10 +5,10 @@
     height: 100%;
 }
 
-.feature h1, p {
+/* .feature h1, p {
     color: black;
     font-family: var(--header-font);
-}
+} */
 
 .feature h1 {
     position: relative;
@@ -34,5 +34,5 @@
     margin: 0;
     top: 50%;
     font-size: 3em;
-    font-family: var(--header-font);
+    /* font-family: var(--header-font); */
 }
