@@ -1,56 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import axios from 'axios';
 import './App.css';
-import Header from './COMPONENTS/Layout/Header'
-import Artisthome from './COMPONENTS/ARTIST/Artisthome';
-import Artistprofile from './COMPONENTS/ARTIST/Artistprofile';
-import Createpage from './COMPONENTS/ObjUpdate/Createpage';
+import NavBar from './COMPONENTS/NAVIGATION/NavBar.jsx';
+import Feature from './COMPONENTS/FEATURE/Feature.jsx';
+import {useFetch} from './Hooks/useFetch.js'
+import { Fragment } from 'react';
+import About from './COMPONENTS/ABOUT/About';
 
-export default class App extends Component{
-  constructor() {
-    super()
-    this.state = {
-      artist: []
-    }
-  }
-  componentDidMount = async () => {
-    let response = await axios.get('https://cultcatalogue.herokuapp.com/artist')
-    console.log(response)
-    this.setState({
-      artist: response.data
-    })
-  }
-
-  render() {
+function App() {
+  const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/artist`)
     return (
       <div className="App">
-        <Route path="/">
-         <Header /> 
-        </Route>
-        
-        <div className="artistCollection">
-          <Header />
-          <Switch>
-            <Route
-              exact path="/"
-              render={(props) =>
-                (<Artisthome data={this.state.artist} />)}
-            />
-            <Route
-              path="/artist/:id"
-              render={(props) =>
-                (<Artistprofile data={this.state.artist} />)}
-            />
-            <Route 
-              path="/createpage"
-              render={(props) =>
-                (<Createpage />)}
-            />
-          </Switch>
+        <NavBar />
+        <div className="main">
+        <Switch>
+          <Route exact path="/" render={() =>
+            <Fragment>
+              <Feature loading={loading} data={data} error={error} />
+            </Fragment>
+          } />
+          <Route exact path="/about" component={About}/>
+        </Switch>
         </div>
       </div>
     );
-  }
 }
 
+export default App;

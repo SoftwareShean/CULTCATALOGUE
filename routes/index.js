@@ -3,6 +3,8 @@ const controller = require('../controllers')
 const router = Router()
 
 router.get('/', (req, res) => { res.send('route') })
-router.get('/artists', controller.getArtists)
-router.get('/artists/:id', controller.getArtist)
-router.post('/artists', controller.)
+router.get('/artist', controller.getArtists)
+router.get('/artist/:id', (req, res) => { controller.getArtist })
+router.post('/artist', (req, req) => { controller.createArtist })
+
+router.destroy('/artist/:id', (req, res) => {controller.deleteArtist})  

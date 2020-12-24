@@ -1,0 +1,29 @@
+nav {
+  position: fixed;
+  border-right: 1px dotted grey;
+  width: 20%;
+  height: 100vh;
+  z-index: 10;
+}
+
+nav h1 {
+  color: black;
+  font-family: var(--header-font);
+  text-align: right;
+  margin: 20% 2%;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav h2 {
+  text-align: right;
+  font-family: var(--header-font);
+  margin: 10% 2%;
+}
+
+nav h2:hover {
+  border-bottom: 1px solid black;
+}

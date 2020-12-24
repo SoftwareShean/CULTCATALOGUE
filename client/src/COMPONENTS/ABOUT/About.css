@@ -1,0 +1,8 @@
+.about {
+    
+}
+
+.about p {
+    font-family: var(--header-font);
+    color: black;
+}
