@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Feature.css'
-// import { useFetch } from '../../Hooks/useFetch.js'
 
 function Feature({ loading, data, error }) {
     if (loading) return <h1>loading...</h1>;
@@ -13,7 +12,7 @@ function Feature({ loading, data, error }) {
                 <h1>Loading...</h1> :
                 <div className="artistFeature">
                     <h1>ARTIST SPOTLIGHT</h1>
-                    <img src={data[0].portraitImg[0]} />
+                    <img src={data[0].portraitImg[0]} alt="Artist Portrait"/>
                     <h2>{artistName}</h2>
                     <p>{data[0].artistBio[0].description}</p>
                 </div>

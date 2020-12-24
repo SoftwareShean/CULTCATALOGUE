@@ -1,0 +1,43 @@
+.requestForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.requestForm h4 {
+    margin: 0;
+    font-family: var(--header-font);
+}
+
+.requestForm form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 4% 0 0 2%;
+}
+
+.requestForm input {
+    width: 100%;
+    padding: 10px;  
+    margin: 1% -5%;
+}
+
+.requestForm input :active{
+    width: 500px;
+    padding: 10px;  
+    margin: 2%;
+}
+
+.requestForm button {
+    align-self: flex-end;
+    margin: 2% 0;  
+    font-family: var(--header-font);
+    font-weight: 800;
+    width: 100px;
+    background-color: black;
+    color: white;
+    font-size: 1em;
+    padding: 14px;
+    border-radius: 20px;
+    border: none;
+}

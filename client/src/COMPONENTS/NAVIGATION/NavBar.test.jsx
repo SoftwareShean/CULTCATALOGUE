@@ -21,8 +21,11 @@ describe('NavBar Component', () => {
     it('Should render an <h2> tag containing About', () => {
         expect(component.contains(<Link to="/about"><h2>ABOUT</h2></Link>)).toBe(true);
     });
+    it('Should render an <h2> tag containing ENDPOINTS', () => {
+        expect(component.contains(<Link to="/endpoints"><h2>ENDPOINTS</h2></Link>)).toBe(true);
+    });
     it('Should render an <h2> tag containing EXAMPLE JSON', () => {
-        expect(component.contains(<Link to="/example"><h2>SAMPLE JSON</h2></Link>)).toBe(true);
+        expect(component.contains(<Link to="/sample"><h2>SAMPLE JSON</h2></Link>)).toBe(true);
     });
     it('Should render an <h2> tag containing Add an artist', () => {
         expect(component.contains(<Link to="/add-form"><h2>ADD AN ARTIST</h2></Link>)).toBe(true);

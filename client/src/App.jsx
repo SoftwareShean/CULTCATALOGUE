@@ -6,6 +6,9 @@ import Feature from './COMPONENTS/FEATURE/Feature.jsx';
 import {useFetch} from './Hooks/useFetch.js'
 import { Fragment } from 'react';
 import About from './COMPONENTS/ABOUT/About';
+import SampleJSON from './COMPONENTS/SAMPLEJSON/SampleJSON';
+import RequestForm from './COMPONENTS/RequestForm/RequestForm';
+import Contact from './COMPONENTS/CONTACT/Contact';
 
 function App() {
   const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/artist`)
@@ -19,7 +22,10 @@ function App() {
               <Feature loading={loading} data={data} error={error} />
             </Fragment>
           } />
-          <Route exact path="/about" component={About}/>
+            <Route exact path="/about" component={About} />
+            <Route exact path="/sample" component={SampleJSON} />
+            <Route exact path="/add-form" component={RequestForm} />
+            <Route exact path="/contact" component={Contact}/>
         </Switch>
         </div>
       </div>

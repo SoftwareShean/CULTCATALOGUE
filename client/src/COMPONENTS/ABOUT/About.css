@@ -1,8 +1,10 @@
 .about {
-    
+    border: 1px solid black;
+    width: 80%;
+
 }
 
-.about p {
+.about h1, p {
     font-family: var(--header-font);
     color: black;
 }
