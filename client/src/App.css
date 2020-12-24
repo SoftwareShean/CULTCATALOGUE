@@ -1,5 +1,18 @@
+:root {
+  --header-font: 'Share Tech Mono', monospace;
+}
+
 .App {
+  display: flex;
+  flex-direction: row;
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.main {
+      margin-left: 22%;
 }
 
 .artistCollection {

@@ -18,7 +18,7 @@ const getArtist = async (req, res) => {
     const artist = await Artist.find(id)
     res.json(artist)
   } catch {
-
+    return res.status(500).send(error.message)
   }
 }
 
@@ -53,7 +53,6 @@ const deleteArtist = async (req, res) => {
 
     }
   }
-
 
 module.exports = {
   getArtists,
