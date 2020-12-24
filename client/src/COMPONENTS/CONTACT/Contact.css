@@ -1,0 +1,7 @@
+.message {
+  height: 300px;
+}
+
+.message ::placeholder {
+
+}
