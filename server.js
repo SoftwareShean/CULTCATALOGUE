@@ -3,7 +3,10 @@ const bodyParser = require('body-parser')
 const logger = require('morgan')
 const PORT = process.env.PORT || 3001
 const db = require('./db/connection')
-const Artist = require('./models/artist')
+const Artist = require('./models/artist.js')
+const Message = require('./models/message.js')
+const Request = require('./models/request.js')
+const ACCESS = process.env.ACCESS;
 const cors = require('cors')
 
 const app = express()
@@ -34,7 +37,7 @@ app.get('/artist/:id', async (req, res) => {
     res.status(201).json(artist)
   } catch {
     console.log(error)
-    res.status(500).json({error: error.messaage})
+    res.status(500).json({error: error.message})
   }
 })
 
@@ -53,7 +56,7 @@ app.put('/artist/:id', async (req, res) => {
   const { id } = req.params
   await Artist.findByIdAndUpdate(id, req.body, { new: true }, (error, artist) => {
     if (error) {
-      return res.status(500).json({error: error.messaage})
+      return res.status(500).json({error: error.message})
     } if (!artist) {
       return res.status(404).json({message: 'Artist not found!'})
     }
@@ -72,3 +75,52 @@ app.delete('/Artist/:id', async (req, res) => {
     res.status(500).json({error: error.message})
   }
 })
+
+app.get('/messages', async (req, res) => {
+  try {
+    const message = await Message.find();
+    res.json(message)
+  } catch (error) {
+    res.status(500).json({error: error.message})
+  }
+})
+
+app.post('/messages', async (req, res) => {
+  try {
+    const message = await new Message(req.body)
+    await message.save()
+    res.status(201).json(message)
+  } catch (error) {
+    res.status(500).json({error: error.message})
+  }
+})
+
+app.get('/requests', async (req, res) => {
+  try {
+    const artistsRequest = await Request.find();
+    res.json(artistsRequest)
+  } catch (error) {
+    res,status(500).json({error: error.message})
+  }
+}) 
+
+app.post('/requests', async (req, res) => {
+  try {
+    const artistsRequest = await new Request(req.body);
+    await artistsRequest.save()
+    res.status(200).json(artistsRequest)
+  } catch (error) {
+    res.status(500).json({error: error.message})
+  }
+})
+
+app.get('/random', async (req, res) => { 
+  try {
+    const randomArtist = await Artist.find();
+    const random = randomArtist[Math.floor(Math.random() * randomArtist.length)]
+    res.json(random)
+  } catch(error) {
+    res.status(500).json({error: error.message})
+  }
+})
+
