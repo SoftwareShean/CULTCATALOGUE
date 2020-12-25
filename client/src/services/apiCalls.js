@@ -45,3 +45,21 @@ export const deleteArtist = async id => {
     throw error
   }
 }
+
+export const getMessages = async () => {
+  try {
+    const response = await api.get('/messages')
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const sendMessage = async (message) => {
+  try {
+    const response = await api.post('/messages', message)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

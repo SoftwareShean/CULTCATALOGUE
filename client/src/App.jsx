@@ -3,11 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './COMPONENTS/NAVIGATION/NavBar.jsx';
 import Feature from './COMPONENTS/FEATURE/Feature.jsx';
-import {useFetch} from './Hooks/useFetch.js'
+import {useFetch} from './HOOKS/useFetch.js'
 import { Fragment } from 'react';
 import About from './COMPONENTS/ABOUT/About';
 import SampleJSON from './COMPONENTS/SAMPLEJSON/SampleJSON';
-import RequestForm from './COMPONENTS/RequestForm/RequestForm';
+import RequestForm from './COMPONENTS/REQUEST/RequestForm';
 import Contact from './COMPONENTS/CONTACT/Contact';
 
 function App() {

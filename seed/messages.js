@@ -4,6 +4,7 @@ const Message = require('../models/message')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
+await Message.deleteMany()
   const messages = [
       {
       "email": "no@reply.com", 
