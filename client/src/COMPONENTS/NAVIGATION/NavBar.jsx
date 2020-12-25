@@ -9,7 +9,6 @@ function NavBar() {
             <Link to="/"><h1>CULTCATALOGUE<br />API</h1></Link>
             <Link to="/about"><h2>ABOUT</h2></Link>
             <Link to="/endpoints"><h2>ENDPOINTS</h2></Link>
-            <Link to="/sample"><h2>SAMPLE JSON</h2></Link>
             <Link to="/add-form"><h2>ADD AN ARTIST</h2></Link>
             <Link to="/contact"><h2>CONTACT</h2></Link>
         </nav>

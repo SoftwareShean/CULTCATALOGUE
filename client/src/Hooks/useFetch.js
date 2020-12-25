@@ -13,6 +13,5 @@ export function useFetch(uri) {
             .then(() => setLoading(false))
             .catch(setError)
     }, [uri]);
-    console.log(data)
     return {loading, data, error}
 }

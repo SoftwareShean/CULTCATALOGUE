@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './COMPONENTS/NAVIGATION/NavBar.jsx';
 import Feature from './COMPONENTS/FEATURE/Feature.jsx';
 import {useFetch} from './HOOKS/useFetch.js'
-import { Fragment } from 'react';
-import About from './COMPONENTS/ABOUT/About';
-import SampleJSON from './COMPONENTS/SAMPLEJSON/SampleJSON';
-import RequestForm from './COMPONENTS/REQUEST/RequestForm';
-import Contact from './COMPONENTS/CONTACT/Contact';
+import About from './COMPONENTS/ABOUT/About.jsx';
+import Endpoints from './COMPONENTS/ENDPOINTS/Endpoints.jsx'
+import RequestForm from './COMPONENTS/REQUEST/RequestForm.jsx';
+import Contact from './COMPONENTS/CONTACT/Contact.jsx';
 
 function App() {
-  const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/artist`)
+  const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/random`)
     return (
       <div className="App">
         <NavBar />
@@ -23,7 +22,7 @@ function App() {
             </Fragment>
           } />
             <Route exact path="/about" component={About} />
-            <Route exact path="/sample" component={SampleJSON} />
+            <Route exact path="/endpoints" component={Endpoints} />
             <Route exact path="/add-form" component={RequestForm} />
             <Route exact path="/contact" component={Contact}/>
         </Switch>

@@ -1,5 +1,5 @@
-const Artist = require('../models/artist')
-const Message = require('./models/message')
+const Artist = require('../models/artist.js')
+const Message = require('./models/message.js')
 const db = require('../db/connection')
 
 db.normalize('error', console.error.bind(console, 'MongoDB connection error:'))
@@ -95,6 +95,16 @@ const postRequest = async (req, res) => {
   }
 }
 
+const randomArtist = async (req, res) => {
+  try {
+    const response = await Artist.find()
+    const random = response[Math.floor(Math.random() * response.length)]
+    res.json(random)
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getArtists,
   getArtist,
@@ -105,5 +115,6 @@ module.exports = {
   postMessages,
   getRequests, 
   postRequest,
+  randomArtist,
 }
 
