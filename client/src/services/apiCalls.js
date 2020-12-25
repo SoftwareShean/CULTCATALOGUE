@@ -63,3 +63,12 @@ export const sendMessage = async (message) => {
     throw error
   }
 }
+
+export const sendRequest = async (request) => {
+  try {
+    const response = await api.post('/requests', request)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
