@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {sendMessage} from '../../SERVICES/apiCalls'
+import {sendMessage} from '../../services/apiCalls'
 import './Contact.css';
 
 function Contact() {

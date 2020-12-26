@@ -1,6 +1,6 @@
 import React from 'react';
 import './Endpoints.css'
-import SampleJson from '../../ASSETS/SAMPLEJSON.png'
+import SampleJson from '../../assets/samplejson.png'
 
 function Endpoints() {
     return (

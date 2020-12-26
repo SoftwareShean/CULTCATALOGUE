@@ -1,6 +1,6 @@
 import React from 'react';
 import './Feature.css'
-import LOADING from '../../ASSETS/LOADING.gif'
+import LOADING from '../../assets/loading.gif'
 
 
 function Feature({ loading, data, error }) {

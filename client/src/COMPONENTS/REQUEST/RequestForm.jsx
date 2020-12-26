@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {sendRequest} from '../../SERVICES/apiCalls'
+import {sendRequest} from '../../services/apiCalls'
 import './RequestForm.css';
 
 function RequestForm() {
