@@ -1,0 +1,62 @@
+.profile {
+  width: 90%;
+  height: fit-content;
+  /* border: 2px solid black; */
+}
+
+.profile img {
+  position: relative;
+  /* bottom: 10px; */
+  z-index: -2;
+  object-fit: cover;
+  height: auto;
+  width: 95%;
+}
+
+.profile h1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* left: -100px; */
+  color: black;
+}
+
+.profile h4 {
+  position: relative;
+  z-index: -1;
+  /* left: -5px; */
+  bottom: 0px; 
+  color: black;
+  font-size: 40px;
+}
+
+.profile h3 {
+  position: relative;
+  left: -20px;
+  bottom: 0;
+  color: black;
+}
+
+.profile p {
+  position: relative;
+  margin: auto;
+  width: 85%;
+  padding: 10px;
+  left: 0px;
+  bottom: 125px;
+  background-color: rgba(250, 248, 248, 0.6);
+  text-align: justify;
+  color: black;
+}
+
+.portfolio img {
+  zoom: 5%;
+  position: relative;
+  bottom: 100px;
+}
+
+.portfolio p {
+  position: relative;
+  left: 20px;
+  width: 100%;
+}

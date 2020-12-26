@@ -1,0 +1,15 @@
+.sample {
+
+}
+
+.sample h1 {
+    font-family: var(--header-font);
+}
+
+blockquote {
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    width: 50%;
+}
