@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import {useFetch} from '../src/hooks/useFetch.js'
 import './App.css';
 import NavBar from './components/navigation/NavBar.jsx';
 import Feature from './components/feature/Feature.jsx';
-import {useFetch} from '../src/hooks/useFetch'
 import About from './components/about/About.jsx';
 import RequestForm from './components/request/RequestForm.jsx';
 import Contact from './components/contact/Contact.jsx';
