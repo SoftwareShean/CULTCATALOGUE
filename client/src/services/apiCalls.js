@@ -19,9 +19,9 @@ export const getArtist = async id => {
   }
 }
 
-export const createArtist = async post => {
+export const createArtist = async data => {
   try {
-    const response = await api.post('/artist', post)
+    const response = await api.post('/artist', data)
     return response.data
   } catch (error) {
     throw error

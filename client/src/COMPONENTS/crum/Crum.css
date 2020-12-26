@@ -14,24 +14,11 @@
     color: white;
 }
 
-.crumHeader button {
-    margin: 2% 0;  
-    font-family: var(--header-font);
-    font-weight: 800;
-    width: 100px;
-    background-color: black;
-    color: white;
-    font-size: 1em;
-    padding: 14px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-}
-
 .editForm {
     display: flex;
     flex-direction: column;
     margin: 0 0 0 5%;
+    width: 60%;
 }
 
 .inputs {
@@ -45,7 +32,7 @@
     font-size: 24px;
     text-align: right;
     font-weight: 400;
-    width: 200px;
+    width: 250px;
 }
 
 .editForm input {
@@ -53,4 +40,9 @@
     width: 500px;
     height: 30px;
     border-radius: 10px;
+}
+
+.crumHeader a {
+    padding: 20px;
+    text-decoration: none;
 }

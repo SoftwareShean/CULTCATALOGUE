@@ -1,11 +1,27 @@
 import React from 'react';
 import { useToggle } from '../../hooks/useToggle';
+import { getArtist, updateArtist } from '../../services/apiCalls';
+import { Link, withRouter } from 'react-router-dom';
 import './Crum.css';
 
 function Crum() {
-  const [value, toggle] = useToggle(false)
+    const [value, toggle] = useToggle(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let { id } = this.props.match.params;
+        const updated = await updateArtist(id);
+    }
+
+    const retrieveArtist = async (e) => {
+        e.preventDefault();
+        let { id } = this.props.match.params;
+        const response = await getArtist(id);
+        console.log(response)
+        return response
+    }
+
     if (value) return (
-        <div className="crum">
+        <div className="crum" onLoad={retrieveArtist}>
             <div className="crumHeader">
                 <h1>EDIT ARTIST</h1>
                 <button onClick={toggle}>SEND UPDATE</button>
@@ -46,14 +62,14 @@ function Crum() {
         </div>
         );
     return (
-        <div className="crum">
+        <div className="crum" onLoad={retrieveArtist}>
             <div className="crumHeader">
             <h1>NOT EDITING</h1>
                 <button onClick={toggle}>UPDATE</button>
-                <button onClick={toggle}>ADD</button>
+                <Link to={`${process.env.REACT_APP_ACCESS_KEY}/add`}><h1>ADD</h1></Link>
             </div>
         </div>
     );
 };
 
-export default Crum;
+export default withRouter(Crum);

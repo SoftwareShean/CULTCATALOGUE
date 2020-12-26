@@ -12,7 +12,7 @@ function Feature({ loading, data, error }) {
         <div className="feature">
                 <div className="artistFeature">
                     <h1>ARTIST SPOTLIGHT</h1>
-                    <img src={data.portraitImg[0]} alt="Artist Portrait"/>
+                    <img src={data.portraitImg[0]} alt="Artist Portrait" />
                     <h2>{artistName}</h2>
                     <p>{data.artistBio[0].description}</p>
                 </div>
