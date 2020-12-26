@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/navigation/NavBar.jsx';
 import Feature from './components/feature/Feature.jsx';
-import {useFetch} from './hooks/useFetch.js'
+import {useFetch} from '../src/hooks/useFetch.js'
 import About from './components/about/About.jsx';
 import RequestForm from './components/request/RequestForm.jsx';
 import Contact from './components/contact/Contact.jsx';
