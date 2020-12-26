@@ -7,19 +7,22 @@ function Search() {
     const [{search, searchResults}] = useState('');
     const [formData, setFormData] = useState({})
 
+    //make an endpoint to send all queries from searchResults in case requests arent made for empty results
     const searchDatabase = async (e) => {
         e.preventDefault();
-        const artists = await getArtists()
-        console.log('api call functions before filter', artists)
-        const filter = () => {
-            const artistsResults = artists.filter(artist => {
-                return artist.name.toLowerCase().includes(formData[search])
-            })
-            console.log(artistsResults)
-            // setFormData({[searchResults]: artistsResults})
+        setFormData({ ...formData, search: e.target.value })
+        try {
+            const query = { ...formData }
+            const search = query.search
+            const artists = await getArtists()
+            const filter = artists.filter(artist => artist.name = search)
+            const searchResults = {...filter}
+                console.log('this is search results', searchResults)
+        } catch (error) {
+            console.log('there was an error:', error.message)
         }
     }
-
+    
     return (
         <div className="search">
             <div className="searchField">
@@ -32,13 +35,13 @@ function Search() {
                     autoComplete="off"
                     autoFocus
                     value={formData[search]}
-                    onChange={(e) => setFormData({...formData, search: e.target.value}), searchDatabase}
-                />
+                    onChange={searchDatabase}
+                    />
                 </div>
             <div className="results">
             {
                 searchResults ? 
-                    <h1>{searchResults[0].name}</h1> :
+                    <h1>{searchResults[0]}</h1> :
                     <></>
             }
             </div>
