@@ -32,12 +32,12 @@ function App() {
                 <Feature loading={loading} data={data} error={error} />
               </Fragment>
             } />
-            <Route exact path={`/:id/${process.env.REACT_APP_ACCESS_KEY}/crum/`} render={() =>
+            <Route exact path={`/${process.env.REACT_APP_ACCESS_KEY}/crum/:id`} render={() =>
               <Fragment>
                 <Crum />
               </Fragment>
             } />
-            <Route exact path="/:key/add" component={AddArtist} />
+            <Route exact path={`/${process.env.REACT_APP_ACCESS_KEY}/add`} component={AddArtist} />
             <Route exact path="/about" component={About} />
             <Route exact path="/add-form" component={RequestForm} />
             <Route exact path="/contact" component={Contact} />

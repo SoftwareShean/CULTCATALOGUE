@@ -1,0 +1,44 @@
+.searchResults {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 1px 5px grey,
+        inset 0 1px 5px grey;
+        border-radius: 3px;
+    width: 80%;
+    padding: 10px;
+    margin: 3% 0 3% 5%;
+}
+
+.artistImage {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    zoom: 60%;
+    padding: 10px;
+}
+
+.artistData {
+    width: 50%;
+}
+
+.artistData h1, h4, p {
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+
+.artistData h4 {
+    margin: 5px 0 0 0;
+}
+
+.artistData p {
+    padding: 10px 0 10px 10px;
+}
+
+.artistData a {
+    padding: 50px 0 0 0;
+    font-weight: 800;
+}

@@ -66,7 +66,6 @@ function Crum() {
             <div className="crumHeader">
             <h1>NOT EDITING</h1>
                 <button onClick={toggle}>UPDATE</button>
-                <Link to={`${process.env.REACT_APP_ACCESS_KEY}/add`}><h1>ADD</h1></Link>
             </div>
         </div>
     );
