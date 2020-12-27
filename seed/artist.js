@@ -1,6 +1,5 @@
 const db = require('../db/connection')
 const Artist = require('../models/artist')
-const Message = require('../models/message')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -9,7 +8,7 @@ await Artist.deleteMany()
   const artists =
     [
       {
-      "name": [ "Grayson Perry" ],
+      "name": "Grayson Perry",
       "portraitImg": [
           "https://gerryco23.files.wordpress.com/2014/11/grayson-perry.jpg?w=725&h=408"
         ],
@@ -52,7 +51,7 @@ await Artist.deleteMany()
           }
         ]
       },       {
-      "name": [ "Kerry James Marshall" ],
+      "name": "Kerry James Marshall",
       "portraitImg": [
           "https://www.moca.org/storage/app/uploads/public/58a/745/0c3/thumb_2185_1680_0_0_0_auto.jpg"
         ],

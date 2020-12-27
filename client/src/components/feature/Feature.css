@@ -1,6 +1,5 @@
 .feature {
-    /* border: 1px solid black; */
-    padding: 4% 0;
+    margin: -2% 0 0 0;
     width: 100%;
     height: 100%;
 }
@@ -18,6 +17,7 @@
 .feature p { 
     text-align: justify;
     font-size: 20px;
+    width: 70%;
 }
 
 .artistFeature {
@@ -25,14 +25,14 @@
 }
 
 .artistFeature img {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 
 .artistFeature h2 {
     position: relative;
     margin: 0;
-    top: 50%;
+    top: 40%;
     font-size: 3em;
     /* font-family: var(--header-font); */
 }
