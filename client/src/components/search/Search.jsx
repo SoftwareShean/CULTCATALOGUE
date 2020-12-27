@@ -4,8 +4,6 @@ import './Search.css'
 import SearchIcon from './SearchIcon';
 
 function Search() {
-    // const [{search, searchResults}] = useState('');
-    // const [formData, setFormData] = useState({})
     const [artists, setArtists] = useState([]);
     const [results, setResults] = useState([]);
     const [search, setSearch] = useState('');
@@ -16,6 +14,7 @@ function Search() {
         const filtered = artists.filter(artist => artist.name.includes(value));
         console.log('filtered', filtered);
         setResults(filtered)
+        console.log(results)
     };
 
     const fetchArtists = async () => {
