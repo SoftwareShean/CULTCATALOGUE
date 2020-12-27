@@ -1,27 +1,32 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { getArtists } from '../../services/apiCalls';
 import './Search.css'
 import SearchIcon from './SearchIcon';
 
 function Search() {
-    const [{search, searchResults}] = useState('');
-    const [formData, setFormData] = useState({})
+    // const [{search, searchResults}] = useState('');
+    // const [formData, setFormData] = useState({})
+    const [artists, setArtists] = useState([]);
+    const [results, setResults] = useState([]);
+    const [search, setSearch] = useState('');
 
-    //make an endpoint to send all queries from searchResults in case requests arent made for empty results
-    const searchDatabase = async (e) => {
-        e.preventDefault();
-        setFormData({ ...formData, search: e.target.value })
-        try {
-            const query = { ...formData }
-            const search = query.search
-            const artists = await getArtists()
-            const filter = artists.filter(artist => artist.name = search)
-            const searchResults = {...filter}
-                console.log('this is search results', searchResults)
-        } catch (error) {
-            console.log('there was an error:', error.message)
-        }
-    }
+    const handleSearch = e => {
+        const {value} = e.target;
+        setSearch(value);
+        const filtered = artists.filter(artist => artist.name.includes(value));
+        console.log('filtered', filtered);
+        setResults(filtered)
+    };
+
+    const fetchArtists = async () => {
+        const artists = await getArtists();
+        console.log('artists', artists);
+        setArtists(artists);
+    };
+
+    useEffect(() => {
+        fetchArtists();
+    }, []);
     
     return (
         <div className="search">
@@ -34,15 +39,13 @@ function Search() {
                     placeholder='Find an artist in the database'
                     autoComplete="off"
                     autoFocus
-                    value={formData[search]}
-                    onChange={searchDatabase}
+                    value={search}
+                    onChange={handleSearch}
                     />
                 </div>
             <div className="results">
             {
-                searchResults ? 
-                    <h1>{searchResults[0]}</h1> :
-                    <></>
+                results.length > 0 && results.map(artist => <h1>{artist.name}</h1>)
             }
             </div>
         </div>
