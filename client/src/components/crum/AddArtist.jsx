@@ -6,7 +6,6 @@ function AddArtist() {
     const [formInputs, setFormInputs] = useState({
         artistName: '',
         portraitImg1: '',
-        portraitImg2: '',
         bioDescription: '',
         bioSource: '',
         galleryName: '',
@@ -25,7 +24,6 @@ function AddArtist() {
         const {
             artistName,
             portraitImg1,
-            portraitImg2,
             bioDescription,
             bioSource,
             galleryName,

@@ -13,6 +13,7 @@
     border-radius: 10px;
     font-size: 20px;
     padding: 0 0 0 10px;
+    outline: none;
 }
 
 .searchField input::placeholder {
@@ -39,5 +40,10 @@
     bottom: 10%;
     z-index: 3;
     padding: 10px;
+}
+
+.databaseRequest {
+    width: 80%;
+    margin: 5%;
 }
 

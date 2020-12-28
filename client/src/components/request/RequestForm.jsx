@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {sendRequest} from '../../services/apiCalls'
 import './RequestForm.css';
 
-function RequestForm() {
+function RequestForm({message}) {
     const [{ name, piece1, piece2, gallery }] = useState('')
     const [formData, setFormData] = useState({})
 
@@ -13,7 +13,7 @@ function RequestForm() {
     
     return (
         <div className="requestForm">
-            <h4>Have a favorite artist you'd like to add to the database?</h4>
+            <h4>{ message }</h4>
             <form name="artist request" onSubmit={handleSubmit} action="/about">
                 <input
                     value={formData[name]}
@@ -22,7 +22,6 @@ function RequestForm() {
                     name="name"
                     type="text"
                     placeholder="Artists First and Last Name"
-                    autoFocus
                 />
                 <input
                     value={formData[piece1]}

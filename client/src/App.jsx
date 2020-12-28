@@ -14,13 +14,6 @@ import AddArtist from './components/crum/AddArtist.jsx';
 
 function App() {
   const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/random`);
-
-  const retrieveArtist = async (e) => {
-        e.preventDefault();
-        let { id } = this.props.match.params;
-        const response = await getArtist(id);
-        console.log(response)
-  }
   
     return (
       <div className="App">
@@ -39,7 +32,7 @@ function App() {
             } />
             <Route exact path={`/${process.env.REACT_APP_ACCESS_KEY}/add`} component={AddArtist} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/add-form" component={RequestForm} />
+            <Route exact path="/add-form" render={() => <RequestForm message={`Have an artist you'd like to add to the database?`}/>} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/search" component={Search} />
         </Switch>
