@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { getArtists } from '../../services/apiCalls';
 import RequestForm from '../request/RequestForm';
-import './Search.css'
+import './Search.scss'
 import SearchIcon from './SearchIcon';
 import SearchResults from './SearchResults';
 

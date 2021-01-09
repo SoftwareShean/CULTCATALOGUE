@@ -1,0 +1,15 @@
+@import '../styles/styles.scss';
+
+.sample {
+    h1 {
+    font-family: $header-font;
+    }
+    blockquote {
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+    width: 50%;
+    }
+}
+

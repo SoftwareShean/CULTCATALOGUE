@@ -2,11 +2,11 @@ import React from 'react';
 import { useToggle } from '../../hooks/useToggle';
 import { getArtist, updateArtist } from '../../services/apiCalls';
 import { withRouter } from 'react-router-dom';
-import './Crum.css';
+import './Crum.scss';
 
 function Crum() {
     const [value, toggle] = useToggle(false);
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         let { id } = this.props.match.params;

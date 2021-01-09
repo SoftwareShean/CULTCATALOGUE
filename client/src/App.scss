@@ -1,13 +1,6 @@
-:root {
-  --header-font: "Share Tech Mono", monospace;
-}
+@import './components/styles/styles.scss';
 
-* { 
-  font-family: var(--header-font);
-  color: black;
-}
 .App {
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: row;
   margin: 0 auto;
@@ -16,7 +9,6 @@
 }
 
 .main {
-  /* border: 1px solid black; */
   margin-left: 22%;
   margin: 5% 0 0 22%;
   width: 80%;
@@ -36,7 +28,7 @@
 
 textarea {
   margin: 5% 0 0 -5%;
-  font-family: var(--header-font);
+  font-family: $header-font;
   padding: 2% 0 0 2%;
 }
 
@@ -46,15 +38,19 @@ a {
 }
 
 button {
-    align-self: flex-start;
-    margin: 2% 0 0 -5%;  
-    font-family: var(--header-font);
-    font-weight: 800;
-    width: 100px;
-    background-color: black;
-    color: white;
-    font-size: 1em;
-    padding: 14px;
-    border-radius: 20px;
-    border: none;
+  align-self: flex-start;
+  margin: 2% 0 0 -5%;  
+  font-family: $header-font;
+  font-weight: 800;
+  width: 100px;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  padding: 14px;
+  border-radius: 20px;
+  border: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: $header-font;
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { createArtist } from '../../services/apiCalls';
-import './AddArtist.css';
+import './AddArtist.scss';
 
 function AddArtist() {
     const [formInputs, setFormInputs] = useState({

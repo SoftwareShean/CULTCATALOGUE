@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './SearchResults.css'
+import './SearchResults.scss'
 
 function SearchResults({ image, name, gallery, bio, id }) {
     const [toggleValue, setToggle] = useState(false);

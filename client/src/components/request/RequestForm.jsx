@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {sendRequest} from '../../services/apiCalls'
-import './RequestForm.css';
+import './RequestForm.scss';
 
 function RequestForm({message}) {
     const [{ name, piece1, piece2, gallery }] = useState('')
