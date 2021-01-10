@@ -15,7 +15,7 @@ const getArtists = async (req, res) => {
 
 const getArtist = async (req, res) => {
   try {
-    const {id} = req.params
+    const { id } = req.params
     const artist = await Artist.find(id)
     res.json(artist)
   } catch {
@@ -37,7 +37,7 @@ const createArtist = async (req, res) => {
 const updateArtist = async (req, res) => {
     try {
       const artistData = req.body
-      const {id} = req.params 
+      const { id } = req.params 
       const artist = await Artist.findByIdAndUpdate(id, artistData, {new: true})
       res.json(artist)
     } catch {
