@@ -26,8 +26,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 })
 
-// app.get('/', (req, res) => res.send(publicPath, 'index.html'));
-
 app.get('/artist', async (req, res) => {
   try {
     const artist = await Artist.find()
