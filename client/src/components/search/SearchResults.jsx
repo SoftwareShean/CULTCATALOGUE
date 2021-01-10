@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './SearchResults.css'
+import './SearchResults.scss'
 
 function SearchResults({ image, name, gallery, bio, id }) {
     const [toggleValue, setToggle] = useState(false);
@@ -24,7 +24,7 @@ function SearchResults({ image, name, gallery, bio, id }) {
                     {/* <img src={image} /> */}
                 </div>
                 <div className="artistData">
-                    <h1>{name}</h1>
+                    <h2>{name}</h2>
                     <h4>ID: {id}</h4>
                     <h4>{gallery} Gallery</h4>
                     <div className="bioReturn">

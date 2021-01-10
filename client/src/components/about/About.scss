@@ -1,0 +1,9 @@
+@import '../styles/styles.scss';
+
+.about {
+    width: 50%;
+    h1, p {
+    font-family: $header-font;
+    color: black;
+    }
+}

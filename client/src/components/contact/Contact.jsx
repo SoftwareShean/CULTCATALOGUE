@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {sendMessage} from '../../services/apiCalls'
-import './Contact.css';
+import './Contact.scss';
 
 function Contact() {
     const [{email, message}] = useState('');

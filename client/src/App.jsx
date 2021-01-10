@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useFetch } from '../src/hooks/useFetch.js';
-import { getArtist } from './services/apiCalls';
-import './App.css';
+import './App.scss';
 import NavBar from './components/navigation/NavBar.jsx';
 import Feature from './components/feature/Feature.jsx';
 import About from './components/about/About.jsx';
@@ -11,16 +10,10 @@ import Contact from './components/contact/Contact.jsx';
 import Search from './components/search/Search';
 import Crum from './components/crum/Crum';
 import AddArtist from './components/crum/AddArtist.jsx';
+import SampleJSON from './components/samplejson/SampleJSON.jsx';
 
 function App() {
   const { loading, data, error } = useFetch(`https://cultcatalogue.herokuapp.com/random`);
-
-  const retrieveArtist = async (e) => {
-        e.preventDefault();
-        let { id } = this.props.match.params;
-        const response = await getArtist(id);
-        console.log(response)
-  }
   
     return (
       <div className="App">
@@ -39,9 +32,10 @@ function App() {
             } />
             <Route exact path={`/${process.env.REACT_APP_ACCESS_KEY}/add`} component={AddArtist} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/add-form" component={RequestForm} />
+            <Route exact path="/add-form" render={() => <RequestForm message={`Have an artist you'd like to add to the database?`}/>} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/search" component={Search} />
+            <Route exact path="/endpoints" component={SampleJSON} />
         </Switch>
         </div>
       </div>
