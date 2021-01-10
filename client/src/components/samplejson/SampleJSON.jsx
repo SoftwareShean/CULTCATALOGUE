@@ -4,8 +4,18 @@ import './SampleJSON.scss'
 function SampleJSON() {
     return (
         <div className="sample">
-            <h1>SAMPLE JSON</h1>
+            <h4><a href="https://cultcatalogue.herokuapp.com/artist">https://cultcatalogue.herokuapp.com/artist</a></h4>
+            <br />
             <h4>/artist</h4>
+            <blockquote>
+
+            </blockquote>
+            <h4>/artist/id</h4>
+                <blockquote>
+                                
+            </blockquote>
+            
+            <h1>SAMPLE JSON</h1>
             <blockquote>
                 <pre>
                     {
@@ -64,10 +74,6 @@ function SampleJSON() {
                 ]`}
                 </pre>
             </blockquote>
-        <h4>/artist/id</h4>
-            <blockquote>
-                
-        </blockquote>
         </div>
     );
 };
