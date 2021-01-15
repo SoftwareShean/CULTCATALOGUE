@@ -4,18 +4,19 @@ import './SampleJSON.scss'
 function SampleJSON() {
     return (
         <div className="sample">
-            <h4><a href="https://cultcatalogue.herokuapp.com/artist">https://cultcatalogue.herokuapp.com/artist</a></h4>
-            <br />
-            <h4>/artist</h4>
+            <h2><a href="/artist">/artist</a></h2>
             <blockquote>
-
+                The /artist endpoint returns every artist currently in the database. 
             </blockquote>
-            <h4>/artist/id</h4>
+            <h2><a href="/artist/5fe7ec9b14be530017dfed32">/artist/id</a></h2>
                 <blockquote>
-                                
+                The /artist/id endpoint returns the artist at its specified id. If you're uncertain of the artists ID you can use the search functionality in the navigation bar to the left to find it.         
             </blockquote>
-            
-            <h1>SAMPLE JSON</h1>
+            <h2><a href="/random">/random</a></h2>
+                <blockquote>
+                The /random endpoint returns a singular random artist from the database on each call.         
+            </blockquote>
+            <h2>SAMPLE JSON</h2>
             <blockquote>
                 <pre>
                     {

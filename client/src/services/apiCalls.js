@@ -57,7 +57,7 @@ export const getMessages = async () => {
 
 export const sendMessage = async (message) => {
   try {
-    const response = await api.post(`${process.env.REACT_APP_ACCESS_KEY}/messages`, message)
+    const response = await api.post(`/messages`, message)
     return response.data
   } catch (error) {
     throw error
@@ -66,7 +66,7 @@ export const sendMessage = async (message) => {
 
 export const sendRequest = async (request) => {
   try {
-    const response = await api.post(`${process.env.REACT_APP_ACCESS_KEY}/requests`, request)
+    const response = await api.post(`/requests`, request)
     return response.data
   } catch (error) {
     throw error

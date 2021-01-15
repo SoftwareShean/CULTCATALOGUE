@@ -13,7 +13,7 @@ function Contact() {
 
     return (
         <div className="requestForm">
-            <h4>Feedback is always welcome. Reach out!</h4>
+            <h2>Feedback is always welcome. Reach out!</h2>
             <form onSubmit={submitHandler}>
                 <input
                     name="email"
