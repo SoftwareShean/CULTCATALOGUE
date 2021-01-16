@@ -14,7 +14,7 @@ const auth = require("oauth2orize")
 
 const path = require('path');
 const app = express();
-const publicPath = path.join(__dirname, '..', '/client/build');
+const publicPath = path.join(__dirname, '../client', '/build');
 const server = auth.createServer();
 // const limiter = require('express-limiter')(app, redisClient);
 
@@ -35,9 +35,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`))
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
-})
 
 app.get('/artist', async (req, res) => {
   try {
@@ -142,3 +139,6 @@ app.get('/random', async (req, res) => {
   }
 })
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
+})
