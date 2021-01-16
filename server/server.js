@@ -35,7 +35,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`))
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 })
 
