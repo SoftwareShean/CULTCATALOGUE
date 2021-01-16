@@ -6,23 +6,36 @@ const db = require('./db/connection');
 const Artist = require('./models/artist.js');
 const Message = require('./models/message.js');
 const Request = require('./models/request.js');
-const ACCESS = process.env.ACCESS;
 const cors = require('cors');
+const helmet = require("helmet");
+const passport = require("passport-http-bearer");
+const auth = require("oauth2orize")
+// const redisClient = require('redis').createClient();
 
 const path = require('path');
 const app = express();
-const publicPath = path.join(__dirname, '..', '/cultcatalogue/client/build');
+const publicPath = path.join(__dirname, '..', '/client/build');
+const server = auth.createServer();
+// const limiter = require('express-limiter')(app, redisClient);
+
 
 app.use(express.static(publicPath));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(logger('dev'));
+app.use(helmet());
+
+// limiter({
+//   lookup: ['connection.remoteAddress'],
+//   total: 100,
+//   expire: 1000 * 60 * 60
+// })
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.listen(PORT, () => console.log(`Express server listening on port ${PORT}`))
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 })
 
@@ -81,7 +94,7 @@ app.delete('/Artist/:id', async (req, res) => {
   }
 })
 
-app.get(`${process.env.ACCESS}/messages`, async (req, res) => {
+app.get(`/messages`, async (req, res) => {
   try {
     const message = await Message.find();
     res.json(message)
@@ -90,7 +103,7 @@ app.get(`${process.env.ACCESS}/messages`, async (req, res) => {
   }
 })
 
-app.post(`${process.env.ACCESS}/messages`, async (req, res) => {
+app.post(`/messages`, async (req, res) => {
   try {
     const message = await new Message(req.body)
     await message.save()
@@ -100,7 +113,7 @@ app.post(`${process.env.ACCESS}/messages`, async (req, res) => {
   }
 })
 
-app.get(`${process.env.ACCESS}/requests`, async (req, res) => {
+app.get(`/requests`, async (req, res) => {
   try {
     const artistsRequest = await Request.find();
     res.json(artistsRequest)
@@ -109,7 +122,7 @@ app.get(`${process.env.ACCESS}/requests`, async (req, res) => {
   }
 }) 
 
-app.post(`${process.env.ACCESS}/requests`, async (req, res) => {
+app.post(`/requests`, async (req, res) => {
   try {
     const artistsRequest = await new Request(req.body);
     await artistsRequest.save()

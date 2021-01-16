@@ -13,7 +13,7 @@ function RequestForm({message}) {
     
     return (
         <div className="requestForm">
-            <h4>{ message }</h4>
+            <h2>{ message }</h2>
             <form name="artist request" onSubmit={handleSubmit} action="/about">
                 <input
                     value={formData[name]}
