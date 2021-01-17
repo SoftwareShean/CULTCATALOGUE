@@ -13,7 +13,7 @@ const auth = require("oauth2orize")
 
 const app = express();
 const path = require('path');
-const publicPath = path.join(__dirname, '/client/build');
+const publicPath = path.join(__dirname, 'client', 'build');
 
 
 app.use(cors());
@@ -131,5 +131,5 @@ app.get('/random', async (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
+  res.sendFile(path.join(--dirname, publicPath, 'index.html'));
 })
