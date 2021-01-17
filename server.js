@@ -11,10 +11,9 @@ const helmet = require("helmet");
 const passport = require("passport-http-bearer");
 const auth = require("oauth2orize")
 
-const path = require('path');
 const app = express();
+const path = require('path');
 const publicPath = path.join(__dirname, '/client', '/build');
-const server = auth.createServer();
 
 
 app.use(express.static(publicPath));
