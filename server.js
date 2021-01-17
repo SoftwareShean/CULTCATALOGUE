@@ -10,13 +10,11 @@ const cors = require('cors');
 const helmet = require("helmet");
 const passport = require("passport-http-bearer");
 const auth = require("oauth2orize")
-// const redisClient = require('redis').createClient();
 
 const path = require('path');
 const app = express();
 const publicPath = path.join(__dirname, '../client', '/build');
 const server = auth.createServer();
-// const limiter = require('express-limiter')(app, redisClient);
 
 
 app.use(express.static(publicPath));
@@ -24,12 +22,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(helmet());
-
-// limiter({
-//   lookup: ['connection.remoteAddress'],
-//   total: 100,
-//   expire: 1000 * 60 * 60
-// })
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

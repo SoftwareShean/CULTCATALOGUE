@@ -1,5 +1,5 @@
 const Artist = require('../models/artist.js')
-const Message = require('./models/message.js.js')
+const Message = require('./models/message.js.js.js')
 const db = require('../db/connection')
 
 db.normalize('error', console.error.bind(console, 'MongoDB connection error:'))
