@@ -13,7 +13,7 @@ const auth = require("oauth2orize")
 
 const path = require('path');
 const app = express();
-const publicPath = path.join(__dirname, '../client', '/build');
+const publicPath = path.join(__dirname, './client', '/build');
 const server = auth.createServer();
 
 
