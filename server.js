@@ -13,14 +13,14 @@ const auth = require("oauth2orize")
 
 const app = express();
 const path = require('path');
-const publicPath = path.join(__dirname, '/client', '/build');
+const publicPath = path.join(__dirname, '/client/build');
 
 
-app.use(express.static(publicPath));
 app.use(cors());
 app.use(bodyParser.json());
-app.use(logger('dev'));
 app.use(helmet());
+app.use(express.static(publicPath));
+app.use(logger('dev'));
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
